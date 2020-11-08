@@ -1,12 +1,3 @@
 inspacy:
   ingress:
-    enabled: true
-    annotations:
-      kubernetes.io/ingress.class: nginx
-    hosts:
-      - host: inspacy.dev.insee.io
-        paths:
-          - /
-    tls:
-      - hosts:
-          - inspacy.dev.insee.io
+    hostname: inspacy.dev.insee.io
