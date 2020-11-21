@@ -15,21 +15,17 @@ keycloak:
           - keycloak-demo-fc.dev.insee.io
 
   startupScripts:
-    # WildFly CLI script for configuring the node-identifier
     # We need to add keycloak vault configuration because of
     # https://github.com/codecentric/helm-charts/issues/241
-    keycloak.cli: |
+    secret-vault.cli: |
         embed-server --server-config=standalone-ha.xml --std-out=echo
         batch
+        echo configuring vault
 
-        echo Configuring node identifier
-        ## Sets the node identifier to the node name (= pod name). Node identifiers have to be unique. They can have a
-        ## maximum length of 23 characters. Thus, the chart's fullname template truncates its length accordingly.
-        /subsystem=transactions:write-attribute(name=node-identifier, value=${jboss.node.name})
         /subsystem=keycloak-server/spi=vault/:add
         /subsystem=keycloak-server/spi=vault/provider=files-plaintext/:add(enabled=true,properties={dir => "/opt/jboss/keycloak/secrets/"})
         /subsystem=keycloak-server/spi=vault:write-attribute(name=default-provider,value=files-plaintext)
-        echo Finished configuring node identifier
+        echo Finished configuring vault
 
         run-batch
         stop-embedded-server
@@ -65,7 +61,7 @@ keycloak:
         secretName: clientsecret
     - name: test-fc-realm
       configMap:
-        name: test-fc-realm
+        name: {{ .Release.Name }}-test-fc-realm
 
   postgresql:
     enabled: false
