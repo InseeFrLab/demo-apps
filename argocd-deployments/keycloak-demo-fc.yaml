@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak-demo-fc
+spec:
+  project: demo-apps
+  source:
+    repoURL: https://github.com/InseeFrLab/demo-apps.git
+    targetRevision: HEAD
+    path: apps/keycloak-franceconnect
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gr-kc-franceconnect-demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
