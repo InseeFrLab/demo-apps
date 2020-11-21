@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inspacy
+spec:
+  project: demo-apps
+  source:
+    repoURL: https://github.com/InseeFrLab/demo-apps.git
+    targetRevision: HEAD
+    path: apps/inspacy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: inspacy
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
