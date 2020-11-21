@@ -1,7 +1,7 @@
 # Demo apps
 
 This repository contains various deployments to showcase opensource apps from `InseeFr` / `InseeFrLab`.  
-Those repositories are continuously deployed thanks to [`argoCD`](https://argoproj.github.io/argo-cd/).
+Those repositories are continuously deployed thanks to [`ArgoCD`](https://argoproj.github.io/argo-cd/). ArgoCD's deployment files are located in `argocd-deployments`.
 
 | App | Project | Description | Url |
 |---|---|---|---|
