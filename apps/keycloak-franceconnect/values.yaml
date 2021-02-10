@@ -1,6 +1,6 @@
 keycloak:
   image:
-    tag: 11.0.3
+    tag: 12.0.2
     
   ingress:
     enabled: true
@@ -39,7 +39,7 @@ keycloak:
       args:
         - -c
         - |
-          curl -L -o /extensions/keycloak-franceconnect.jar https://github.com/InseeFr/Keycloak-FranceConnect/releases/download/2.2/keycloak-franceconnect-2.2.jar
+          curl -L -o /extensions/keycloak-franceconnect.jar https://github.com/InseeFr/Keycloak-FranceConnect/releases/download/2.3/keycloak-franceconnect-2.3.jar
       volumeMounts:
         - name: extensions
           mountPath: /extensions
