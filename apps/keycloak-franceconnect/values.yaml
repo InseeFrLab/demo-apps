@@ -14,22 +14,6 @@ keycloak:
       - hosts:
           - keycloak-demo-fc.dev.insee.io
 
-  startupScripts:
-    # We need to add keycloak vault configuration because of
-    # https://github.com/codecentric/helm-charts/issues/241
-    secret-vault.cli: |
-        embed-server --server-config=standalone-ha.xml --std-out=echo
-        batch
-        echo configuring vault
-
-        /subsystem=keycloak-server/spi=vault/:add
-        /subsystem=keycloak-server/spi=vault/provider=files-plaintext/:add(enabled=true,properties={dir => "/opt/jboss/keycloak/secrets/"})
-        /subsystem=keycloak-server/spi=vault:write-attribute(name=default-provider,value=files-plaintext)
-        echo Finished configuring vault
-
-        run-batch
-        stop-embedded-server
-
   extraInitContainers: |
     - name: realm-ext-provider
       image: curlimages/curl
