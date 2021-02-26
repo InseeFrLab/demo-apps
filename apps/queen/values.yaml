@@ -1,0 +1,7 @@
+queen:
+  api:
+    hostname: queen-bo.dev.insee.io
+  ingress:
+    hosts:
+    - host: queen.dev.insee.io
+
