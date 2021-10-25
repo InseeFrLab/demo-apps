@@ -1,0 +1,25 @@
+inspacy:
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    enabled: true
+    hosts:
+    - host: api-predicat.lab.sspcloud.fr
+      paths:
+      - path: /
+    tls:
+    - hosts:
+      - api-predicat.lab.sspcloud.fr
+  init:
+    args:
+    - mc alias set minio $S3_URL $S3_USER $S3_PASSWORD --api S3v4; mc cp minio/ssplab/predicat/model_na2008.bin
+      /data/model_na2008.bin
+    command:
+    - /bin/sh
+    - -c
+    enabled: true
+    env:
+      S3_PASSWORD: changeme
+      S3_URL: https://minio.lab.sspcloud.fr/
+      S3_USER: predicat
+    image: minio/mc

@@ -1,0 +1,8 @@
+apiVersion: v2
+name: predicat
+version: 0.3.0
+dependencies:
+  - name: predicat
+    version: 0.3.0
+    repository: https://inseefrlab.github.io/helm-charts
+    enabled: true
