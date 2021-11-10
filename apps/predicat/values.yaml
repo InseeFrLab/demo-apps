@@ -3,8 +3,8 @@ predicat:
     enabled: false
   init:
     args:
-    - mc alias set minio $S3_URL $S3_USER $S3_PASSWORD --api S3v4; mc cp minio/projet-predicat/modeles/model_na2008.bin
-      /data/model_na2008.bin
+    - mc alias set minio $S3_URL $S3_USER $S3_PASSWORD --api S3v4; mc cp --recursive minio/projet-predicat/modeles/model_*.bin
+      /data/
     command:
     - /bin/sh
     - -c
