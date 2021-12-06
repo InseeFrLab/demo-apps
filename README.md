@@ -5,5 +5,7 @@ Those repositories are continuously deployed thanks to [`ArgoCD`](https://argopr
 
 | App | Project | Description | Url |
 |---|---|---|---|
+| [Addok-ban](apps/addok-ban) | [Addok](https://github.com/addok/addok) | Search engine for address. Only address | [https://api.lab.sspcloud.fr/ban](https://api.lab.sspcloud.fr/ban) |
+| [Predicat](apps/predicat) | [Predicat](https://github.com/inseefrlab/predicat) | A Python API for product labelling | [https://api.lab.sspcloud.fr/predicat](https://api.lab.sspcloud.fr/predicat) |
 | [InspaCy](apps/inspacy) | [Inspacy](https://github.com/inseefrlab/inspacy-ui) | A Python Web App for Named Entity Recognition using SpaCy | [https://inspacy.dev.insee.io](https://inspacy.dev.insee.io) |
 | [Keycloak-FranceConnect](apps/keycloak-franceconnect) | [Keycloak-FranceConnect](https://github.com/inseefr/Keycloak-FranceConnect) | A keycloak extension to use France Connect | [https://keycloak-demo-fc.dev.insee.io/auth/realms/test-fc/account](https://keycloak-demo-fc.dev.insee.io/auth/realms/test-fc/account) |

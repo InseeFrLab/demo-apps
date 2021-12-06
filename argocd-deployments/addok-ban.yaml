@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: addok-ban
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/InseeFrLab/demo-apps.git
+    targetRevision: HEAD
+    path: apps/addok-ban
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: projet-addok
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

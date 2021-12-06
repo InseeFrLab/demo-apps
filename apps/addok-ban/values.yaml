@@ -1,0 +1,4 @@
+addok:
+  ingress:
+    # No ingress as we are using Gravitee as API manager
+    enabled: false
