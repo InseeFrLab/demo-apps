@@ -1,7 +1,6 @@
 predicat:
   ingress:
     enabled: true
-    hostname: toto.lab.sspcloud.fr
   init:
     args:
     - mc alias set minio $S3_URL $S3_USER $S3_PASSWORD --api S3v4; mc cp --recursive minio/projet-predicat/modeles/
