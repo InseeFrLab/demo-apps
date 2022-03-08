@@ -1,0 +1,27 @@
+addok:
+  ingress:
+    # No ingress as we are using Gravitee as API manager
+    enabled: false
+  init:
+    enabled: true
+    image: curlimages/curl
+    command: ["curl"]
+    args:
+      [
+        "-o",
+        "/data/addok.db",
+        "-L",
+        "https://minio.lab.sspcloud.fr/projet-addok/addok-bano.db",
+      ]
+  redis:
+    init:
+      enabled: true
+      image: curlimages/curl
+      command: ["curl"]
+      args:
+        [
+          "-o",
+          "/data/dump.rdb",
+          "-L",
+          "https://minio.lab.sspcloud.fr/projet-addok/dump-bano.rdb",
+        ]

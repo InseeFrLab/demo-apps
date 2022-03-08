@@ -5,4 +5,3 @@ dependencies:
   - name: addok
     version: 0.1.0
     repository: https://inseefrlab.github.io/helm-charts
-    enabled: true
