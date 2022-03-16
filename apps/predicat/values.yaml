@@ -13,4 +13,4 @@ predicat:
       S3_PASSWORD: changeme
       S3_URL: https://minio.lab.sspcloud.fr/
       S3_USER: predicat
-    image: minio/mc:RELEASE.2021-12-20T23-43-34Z
+    image: minio/mc
