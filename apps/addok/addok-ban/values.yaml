@@ -1,11 +1,12 @@
 addok:
+  workers: 49
   resources:
     requests:
       memory: "2048Mi"
       cpu: "100m"
     limits:
       memory: "20Gi"
-      cpu: "30000m"
+      cpu: "50000m"
   ingress:
     # No ingress as we are using Gravitee as API manager
     enabled: false
