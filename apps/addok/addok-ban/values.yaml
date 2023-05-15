@@ -1,5 +1,6 @@
 addok:
   workers: 49
+  workerTimeout: 600
   resources:
     requests:
       memory: "2048Mi"
