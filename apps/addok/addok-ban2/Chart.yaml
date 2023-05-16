@@ -1,0 +1,7 @@
+apiVersion: v2
+name: addok-ban2
+version: 0.1.3
+dependencies:
+  - name: addok2
+    version: 0.1.3
+    repository: https://inseefrlab.github.io/helm-charts
