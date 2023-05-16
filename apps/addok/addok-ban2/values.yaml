@@ -11,3 +11,8 @@ addok:
   ingress:
     # No ingress as we are using Gravitee as API manager
     enabled: false
+  image:
+  repository: jdesboeufs/addok-server
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
